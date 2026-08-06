@@ -10,6 +10,7 @@
     "frontend:build": "npx nx build frontend",
     "frontend:serve": "npx nx serve frontend",
     "frontend:start": "npx nx start frontend",
+    "frontend:vercel-build": "sh scripts/vercel-build-frontend.sh",
     "dev": "npx nx run-many --target=serve --projects=api,frontend --parallel=2",
     "build": "npx nx run-many --target=build --projects=api,frontend",
     "db:up": "docker compose up -d mariadb",
