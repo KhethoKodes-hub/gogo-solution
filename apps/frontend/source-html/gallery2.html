@@ -1,0 +1,1022 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GO-GO Shuttles - Gallery | Premium Staff Transport & Shuttle Services South Africa">
+    <meta name="author" content="GO-GO Shuttles">
+
+    <title>GO-GO Shuttles | Gallery</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/keyframe-animation.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome-pro/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/logistic-icons.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/venobox.min.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/common-style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ── Minibus Taxi footer animation ── */
+        .running-truck {
+            position: relative;
+            height: 64px;
+            overflow: hidden;
+            background: transparent;
+        }
+        .taxi-run {
+            position: absolute;
+            bottom: 4px;
+            width: 120px;
+            animation: taxiDrive 8s linear infinite;
+        }
+        .taxi-run:nth-child(2) { animation-delay: -3s; width: 90px; }
+        .taxi-run:nth-child(3) { animation-delay: -6s; width: 105px; }
+        @keyframes taxiDrive {
+            from { left: -140px; }
+            to   { left: 110%; }
+        }
+
+        /* ── Gallery filter tabs ── */
+        .gallery-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .gallery-filter button {
+            background: transparent;
+            border: 2px solid var(--border-color, #e0e0e0);
+            color: var(--heading-color, #1a237e);
+            padding: 8px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .gallery-filter button:hover,
+        .gallery-filter button.active {
+            background: var(--primary-color, #f5a623);
+            border-color: var(--primary-color, #f5a623);
+            color: #fff;
+        }
+
+        /* ── Gallery grid ── */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @media (max-width: 991px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 575px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Spanning items for visual variety */
+        .gallery-item.span-2 {
+            grid-column: span 2;
+        }
+        @media (max-width: 575px) {
+            .gallery-item.span-2 { grid-column: span 1; }
+        }
+
+        /* ── Gallery item ── */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+        }
+        .gallery-item.span-2 img {
+            height: 280px;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Overlay */
+        .gallery-item .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,35,126,0.85) 0%, rgba(26,35,126,0.15) 60%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px 20px 20px;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-overlay .gallery-label {
+            display: inline-block;
+            background: #f5a623;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+        .gallery-overlay h4 {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            line-height: 1.3;
+        }
+        .gallery-overlay .gallery-zoom {
+            width: 40px;
+            height: 40px;
+            background: #f5a623;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+        .gallery-overlay .gallery-zoom:hover {
+            background: #fff;
+            color: #1a237e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="preloader-bg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="site-preloader preloader-text">
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+            <span data-text="-">-</span>
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+         HEADER
+    ══════════════════════════════════ -->
+    <header class="main-header">
+        <div class="container">
+            <div class="main-header-wapper">
+                <div class="site-logo">
+                    <a href="index.html"><img src="assets/img/logo-light.png" alt="GO-GO Shuttles Logo" /></a>
+                </div>
+                <div class="main-header-info">
+                    <div class="top-header">
+                        <ul class="top-left">
+                            <li><i class="fa-regular fa-phone"></i><a href="tel:0115685340">011 568 5340</a></li>
+                            <li><i class="fa-regular fa-envelope-dot"></i>info@gogoshuttles.co.za</li>
+                        </ul>
+                        <div class="top-right">
+                            <ul class="top-header-nav">
+                                <li><a href="faqs.html">Help</a></li>
+                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="faqs.html">FAQ</a></li>
+                            </ul>
+                            <ul class="header-social-share">
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-menu-wrap">
+                        <ul class="nav-menu">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <ul>
+                                    <li><a href="index.html">Home Default</a></li>
+                                    <li><a href="index-2.html">Home Modern</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="company.html">Company</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="company.html">Company</a></li>
+                                    <li><a href="services-logistic.html">Staff Transport</a></li>
+                                    <li><a href="services-transportation.html">Shuttle Services</a></li>
+                                    <li><a href="service-details.html">Service Details</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul>
+                                    <li><a href="team.html">Our Team</a></li>
+                                    <li><a href="team-details.html">Team Details</a></li>
+                                    <li><a href="faq.html">Help &amp; FAQs</a></li>
+                                    <li><a href="pricing-plans.html">Plans &amp; Pricing</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="projects.html">Projects</a>
+                                <ul>
+                                    <li><a href="projects.html">Our Projects</a></li>
+                                    <li><a href="project-details.html">Project Details</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog-grid.html">Blog</a>
+                                <ul>
+                                    <li><a href="blog-grid.html">Grid Posts</a></li>
+                                    <li><a href="blog-classic.html">Classic Posts</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="menu-right-item">
+                            <div class="menu-action-btn dl-search-icon">
+                                <i class="fa-sharp fa-light fa-magnifying-glass"></i>
+                            </div>
+                            <div class="menu-action-btn cart">
+                                <i class="fa-sharp fa-light fa-bag-shopping"></i>
+                                <span>0</span>
+                            </div>
+                            <div class="mobile-menu-icon">
+                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                            </div>
+                            <a href="contact.html" class="default-btn d-none d-lg-block d-md-block"><i class="fa-regular fa-bus"></i>Book a Shuttle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="popup-search-box">
+        <div class="box-inner-wrap d-flex align-items-center">
+            <form id="form" action="#" method="get" role="search">
+                <input id="popup-search" type="text" name="s" placeholder="Type keywords here...">
+                <button id="popup-search-button" type="submit" name="submit">
+                    <i class="fa-sharp fa-light fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <div class="search-close"><i class="fa-regular fa-xmark"></i></div>
+        </div>
+    </div>
+
+    <div id="searchbox-overlay"></div>
+
+    <!-- ══════════════════════════════════
+         PAGE HEADER
+    ══════════════════════════════════ -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-info">
+                <h4>Our Gallery</h4>
+                <h2>Fleet, service &amp; <br>team <span>moments!</span></h2>
+                <p>A visual journey through GO-GO Shuttles — our fleet, our people, <br>and the communities we serve across Gauteng.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         GALLERY SECTION
+    ══════════════════════════════════ -->
+    <section class="projects-section padding">
+        <div class="map-pattern"></div>
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="gallery-filter wow fade-in-bottom" data-wow-delay="100ms">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="luxury">Luxury — Scania</button>
+                <button data-filter="semilux">Semi-Lux</button>
+                <button data-filter="coaster">Coaster</button>
+                <button data-filter="standard">Standard Bus</button>
+                <button data-filter="compact">Compact</button>
+                <button data-filter="drivers">Bus &amp; Drivers</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+
+                <!-- ═══════════════════════════
+                     1. LUXURY — SCANIA
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143441__74A7767.jpg" alt="GO-GO Shuttles Luxury Scania coach">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Premium Scania Coach — Flagship Fleet</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143441__74A7767.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143458__74A7768.jpg" alt="GO-GO Shuttles Luxury Scania">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania Luxury Coach — Exterior</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143458__74A7768.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143508__74A7770.jpg" alt="Scania luxury coach detail">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania Coach — Detail Shot</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143508__74A7770.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143601__74A7772.jpg" alt="GO-GO Shuttles Scania fleet">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania Fleet — Ready for Departure</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502143601__74A7772.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502144756__74A7802.jpg" alt="Scania luxury side profile">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania Coach — Full Profile</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502144756__74A7802.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502145316__74A7812.jpg" alt="Luxury Scania coach front">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania — Front View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502145316__74A7812.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502150005__74A7833.jpg" alt="Scania luxury coach on route">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania Coach — On the Road</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502150005__74A7833.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="300ms" data-category="luxury">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502150122__74A7843.jpg" alt="Scania coach branding">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Luxury — Scania</span>
+                        <h4>Scania — GO-GO Branding</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/1._Luxury_-_Scania/20260502150122__74A7843.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════
+                     2. SEMI-LUX — YUTONG & HUNDAI
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502150658__74A7864.jpg" alt="GO-GO Shuttles Yutong semi-luxury coach">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Yutong Semi-Luxury Coach — Fleet</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502150658__74A7864.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502150703__74A7865.jpg" alt="Yutong coach exterior">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Yutong Coach — Exterior</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502150703__74A7865.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502151500__74A7901.jpg" alt="Hyundai semi-luxury shuttle">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Hyundai Semi-Lux — Staff Transport</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502151500__74A7901.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502151630__74A7908.jpg" alt="Semi-luxury coach on route">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Semi-Lux Coach — Gauteng Routes</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502151630__74A7908.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502152414__74A7931.jpg" alt="Semi-luxury fleet line-up">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Semi-Lux Fleet — Line-up</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502152414__74A7931.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502163815__74A8154.jpg" alt="Semi-lux interior comfort">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Semi-Lux — Passenger Comfort</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502163815__74A8154.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502164018__74A8164.jpg" alt="Yutong branding detail">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Yutong — Branding &amp; Detail</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502164018__74A8164.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="300ms" data-category="semilux">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502175205__74A8403.jpg" alt="Semi-lux rear view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Semi-Lux</span>
+                        <h4>Semi-Lux Coach — Rear View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/2._Semi_Lux_-_Yutong_Hundai/20260502175205__74A8403.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════
+                     3. COASTER
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175502__74A8412.jpg" alt="GO-GO Shuttles Coaster bus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster Bus — Versatile Mid-Size</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175502__74A8412.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175506__74A8413.jpg" alt="Coaster bus exterior">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster — Exterior</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175506__74A8413.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175946__74A8444.jpg" alt="Coaster bus on route">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster — On Route</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502175946__74A8444.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180011__74A8448.jpg" alt="Coaster bus side view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster — Side Profile</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180011__74A8448.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180321__74A8470.jpg" alt="Coaster fleet">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster Fleet — Depot</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180321__74A8470.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180541__74A8478.jpg" alt="Coaster bus front view">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster — Front View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180541__74A8478.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="coaster">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180707__74A8486.jpg" alt="Coaster bus detail">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Coaster</span>
+                        <h4>Coaster — Vehicle Detail</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/3._Coaster/20260502180707__74A8486.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════
+                     4. STANDARD BUS — FUSO & INO
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160226__74A8064.jpg" alt="GO-GO Shuttles FUSO standard bus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>FUSO Standard Bus — Workhorse Fleet</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160226__74A8064.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160234__74A8066.jpg" alt="FUSO bus exterior">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>FUSO Bus — Exterior</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160234__74A8066.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160248__74A8070.jpg" alt="Standard bus side">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>Standard Bus — Side Profile</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160248__74A8070.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160304__74A8073.jpg" alt="FUSO bus front">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>FUSO — Front View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502160304__74A8073.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502162727__74A8112.jpg" alt="INO standard bus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>INO Standard Bus — Staff Commuter</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502162727__74A8112.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502162802__74A8119.jpg" alt="Standard bus detail">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>Standard Bus — Vehicle Detail</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502162802__74A8119.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502170309__74A8249.jpg" alt="Standard bus on route">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>Standard Bus — In Service</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502170309__74A8249.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="300ms" data-category="standard">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502173232__74A8316.jpg" alt="FUSO bus rear">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Standard Bus</span>
+                        <h4>FUSO — Rear &amp; Livery</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/4._Standard_Bus_-_FUSO_INO/20260502173232__74A8316.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════
+                     5. COMPACT — QUANTUM & IVECO
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502180717__74A8488.jpg" alt="GO-GO Shuttles Quantum compact shuttle">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Quantum Compact — Urban Shuttle</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502180717__74A8488.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181641__74A8542.jpg" alt="Iveco compact minibus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Iveco Compact — Minibus</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181641__74A8542.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181645__74A8545.jpg" alt="Compact shuttle exterior">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Compact Shuttle — Exterior</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181645__74A8545.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181714__74A8547.jpg" alt="Compact minibus side">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Compact — Side View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181714__74A8547.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181723__74A8548.jpg" alt="Compact shuttle line-up">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Compact Line — Fleet Line-up</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181723__74A8548.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181745__74A8553.jpg" alt="Compact shuttle front">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Compact — Front View</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181745__74A8553.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="compact">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181748__74A8555.jpg" alt="Compact minibus detail">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Compact</span>
+                        <h4>Compact Minibus — Detail</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/5._Compact_line_-Quantum_Iveco/20260502181748__74A8555.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════
+                     GROUPING — BUS & DRIVERS
+                ═══════════════════════════ -->
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502150648__74A7863.jpg" alt="GO-GO Shuttles driver with bus">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Our Drivers — Proud &amp; Professional</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502150648__74A7863.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151210__74A7882.jpg" alt="Driver posing with luxury coach">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Driver — Luxury Coach Proud</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151210__74A7882.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151238__74A7886.jpg" alt="Driver in uniform">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Uniformed Driver — Ready to Serve</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151238__74A7886.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151253__74A7891.jpg" alt="Driver with fleet">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Driver &amp; Fleet — Team Shot</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502151253__74A7891.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- wide -->
+                <div class="gallery-item span-2 wow fade-in-bottom" data-wow-delay="100ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502171528__74A8272.jpg" alt="Bus and drivers group shot">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>GO-GO Team — Fleet &amp; Drivers</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502171528__74A8272.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="100ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502172213__74A8280.jpg" alt="Driver portrait">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Driver Portrait — Our People</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502172213__74A8280.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="200ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502172739__74A8302.jpg" alt="Drivers with fleet">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Drivers &amp; Fleet — Pride of GO-GO</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502172739__74A8302.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item wow fade-in-bottom" data-wow-delay="300ms" data-category="drivers">
+                    <img src="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502174609__74A8391.jpg" alt="Driver with bus action shot">
+                    <div class="gallery-overlay">
+                        <span class="gallery-label">Bus &amp; Drivers</span>
+                        <h4>Driver — In Action</h4>
+                        <a class="gallery-zoom venobox" href="assets/img/gogo-photos/shuttleservice-1-photo-download-1of1/Grouping_Images_-_Bus_Drivers/20260502174609__74A8391.jpg" data-gall="gallery">
+                            <i class="fa-regular fa-magnifying-glass-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.gallery-grid -->
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA SECTION
+    ══════════════════════════════════ -->
+    <section class="cta-section padding-bottom">
+        <div class="container">
+            <div class="row cta-wrapper gx-0">
+                <div class="col-lg-6">
+                    <div class="section-heading white">
+                        <h3 class="sub-heading is-border border-anim">Getting You There Safely!<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                        <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Reliable Staff &amp; <br>Event Shuttle <span class="hl">Services!</span></h2>
+                        <a href="contact.html" class="default-btn wow fade-in-bottom" data-wow-delay="200ms">Book a Shuttle</a>
+                    </div>
+                </div>
+                <div class="cta-men wow fade-in-bottom" data-wow-delay="200ms"></div>
+            </div>
+            <div class="row promo-item-wrapper gx-0">
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-bus-1"></i>
+                        <div class="promo-content">
+                            <h3>Staff Transport</h3>
+                            <p>Daily scheduled employee transport tailored to shift times and routes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-map-1"></i>
+                        <div class="promo-content">
+                            <h3>Park-and-Ride</h3>
+                            <p>Hub-to-venue shuttle services for businesses and large events.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-employee"></i>
+                        <div class="promo-content">
+                            <h3>Corporate Events</h3>
+                            <p>Bespoke transport for conferences, exhibitions and private charters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FOOTER
+    ══════════════════════════════════ -->
+    <footer class="footer-section">
+        <div class="map-pattern"></div>
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row gy-lg-0 gy-4">
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget">
+            <a href="index.html" class="footer-logo"><img src="assets/img/gogo-logo.png" alt="GO-GO Shuttles"></a>
+            <p>For over a decade, GO-GO Shuttles has been connecting people, businesses, educational institutions and communities through safe, reliable and professional transport solutions.</p>
+            <ul class="social-share">
+                <a href="https://www.facebook.com/GoGoShuttles1"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/go_go_shuttles/"><i class="fa-brands fa-instagram"></i></a>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget widget-links">
+            <div class="widget-title"><h3>Company</h3></div>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services-transportation.html">Our Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget">
+            <div class="widget-title"><h3>Get In Touch</h3></div>
+            <ul class="footer-contact-info">
+                <li>
+                    <p><span>Address:</span>100 Western Service Rd,<br>Woodmead, Sandton, 2148</p>
+                </li>
+                <li>
+                    <p><span>Phone:</span>011 568 5340 / 064 540 8024</p>
+                </li>
+                <li>
+                    <p><span>Email:</span>info@gogoshuttles.co.za</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="copyright-area"> 
+            © <span id="currentYear"></span> GO-GO Shuttles (Pty) Ltd, All Rights Reserved. | 100% Black-Owned | B-BBEE Level 1 | <a href="https://www.gogoshuttles.co.za" target="_blank">www.gogoshuttles.co.za</a>
+        </div>
+    </footer>
+
+    <div id="scrollup">
+        <button id="scroll-top" class="scroll-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/lib/gsap/gsap.min.js"></script>
+    <script src="assets/lib/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/lib/gsap/split-type.min.js"></script>
+    <script src="assets/js/vendor/lenis.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/venobox.min.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/mailchimp.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Gallery filter script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.gallery-filter button');
+            const items = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+                    items.forEach(function (item) {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

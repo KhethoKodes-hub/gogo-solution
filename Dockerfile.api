@@ -1,0 +1,25 @@
+FROM node:24-alpine AS builder
+
+WORKDIR /workspace
+
+COPY package.json package-lock.json ./
+COPY nx.json tsconfig.base.json jest.preset.js jest.config.ts eslint.config.mjs ./
+COPY apps/api ./apps/api
+
+RUN npm install --include=dev && npx nx build api --skipNxCache
+
+FROM node:24-alpine AS runtime
+
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+
+COPY --from=builder /workspace/dist/api ./dist/api
+
+USER node
+
+EXPOSE 3000
+
+CMD ["node", "dist/api/main.js"]

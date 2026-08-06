@@ -1,0 +1,63 @@
+services:
+  mariadb:
+    image: mariadb:10.4
+    container_name: gogo-shuttles-mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: gogo_shuttles_platform
+      MARIADB_USER: gogo_app
+      MARIADB_PASSWORD: gogo_app_pw
+    ports:
+      - '3306:3306'
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: gogo-shuttles-api
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+    environment:
+      PORT: 3000
+      ALLOWED_ORIGIN: http://localhost:4200
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_USER: gogo_app
+      DB_PASSWORD: gogo_app_pw
+      DB_NAME: gogo_shuttles_platform
+      DB_SYNC: "false"
+      DB_LOGGING: "false"
+      JWT_ACCESS_SECRET: replace-me
+      JWT_ACCESS_TTL: 15m
+      JWT_REFRESH_SECRET: replace-me-too
+      JWT_REFRESH_TTL: 7d
+      AUTH_DISABLED: "false"
+      M2M_DEV_CLIENT_ID: local-bff
+      M2M_DEV_CLIENT_SECRET: local-dev-secret-please-change
+      M2M_DEV_SCOPES: api.read api.write
+      CONTACT_EMAIL_MODE: log
+      CONTACT_NOTIFICATION_EMAIL: ops@gogoshuttles.local
+      MAIL_FROM: noreply@gogoshuttles.local
+      MAIL_REPLY_TO: ops@gogoshuttles.local
+    ports:
+      - '3000:3000'
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: gogo-shuttles-frontend
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      NUXT_PUBLIC_API_BASE_URL: http://localhost:3000/api
+    ports:
+      - '4200:4200'
+
+volumes:
+  mariadb_data:

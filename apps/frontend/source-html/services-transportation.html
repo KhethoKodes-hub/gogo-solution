@@ -1,0 +1,566 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GO-GO Shuttles - Our Services | Premium Staff Transport & Shuttle Services South Africa">
+    <meta name="author" content="GO-GO Shuttles">
+
+    <title>GO-GO Shuttles | Our Services</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/gogologo.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/keyframe-animation.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome-pro/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/logistic-icons.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/venobox.min.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/common-style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        /* ════════════════════════════════════
+           MODERN NAVBAR — GO-GO SHUTTLES
+        ════════════════════════════════════ */
+        .main-header {
+            background: #ffffff !important;
+            padding: 0 !important;
+            overflow: visible !important;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.09) !important;
+        }
+        .gogo-topbar { background: #04223e; border-bottom: 3px solid #e31837; }
+        .gogo-topbar-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 7px 0; gap: 12px; flex-wrap: wrap;
+        }
+        .gogo-topbar-left { display: flex; align-items: center; gap: 22px; }
+        .gogo-topbar-left a, .gogo-topbar-email {
+            color: #b0c4de; font-size: 12.5px; text-decoration: none;
+            display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+        }
+        .gogo-topbar-left a:hover { color: #fff; }
+        .gogo-topbar-left i { color: #e31837; font-size: 11px; }
+        .gogo-topbar-right { display: flex; align-items: center; gap: 18px; }
+        .gogo-topnav-links { display: flex; align-items: center; gap: 10px; }
+        .gogo-topnav-links a {
+            color: #8899aa; font-size: 11px; text-decoration: none;
+            text-transform: uppercase; letter-spacing: 0.7px; transition: color 0.2s;
+        }
+        .gogo-topnav-links a:hover { color: #fff; }
+        .gogo-topnav-links span { color: #2a3a4a; font-size: 10px; }
+        .gogo-social-bar { display: flex; align-items: center; gap: 6px; }
+        .gogo-social-bar a {
+            color: #8899aa !important; font-size: 11px !important;
+            width: 26px; height: 26px;
+            border: 1px solid rgba(255,255,255,0.12); border-radius: 50%;
+            display: flex !important; align-items: center; justify-content: center;
+            transition: all 0.25s; text-decoration: none;
+        }
+        .gogo-social-bar a:hover { background: #e31837 !important; border-color: #e31837 !important; color: #fff !important; }
+        .main-header-wapper {
+            display: flex !important; align-items: center !important;
+            grid-template-columns: unset !important; min-height: 74px;
+        }
+        .site-logo {
+            background: transparent !important; padding: 10px 28px 10px 0 !important;
+            border-radius: 0 !important; border-right: 2px solid #f0f3f7 !important;
+            margin-right: 8px !important; flex-shrink: 0 !important;
+            align-self: stretch !important; display: flex !important; align-items: center !important;
+        }
+        .site-logo img { width: 130px !important; }
+        .main-header-info { background: transparent !important; flex: 1 !important; }
+        .main-header-info:before, .main-header-info:after { display: none !important; }
+        .top-header { display: none !important; }
+        .header-menu-wrap {
+            display: flex !important; align-items: center !important;
+            background: transparent !important; padding: 0 !important;
+            min-height: 74px !important; justify-content: space-between !important;
+        }
+        .header-menu-wrap:before { display: none !important; }
+        .nav-menu { display: flex !important; align-items: center !important; }
+        .nav-menu > li > a {
+            color: #1a1a2e !important; font-size: 14px !important;
+            font-weight: 600 !important; letter-spacing: 0.2px !important;
+            padding: 6px 15px !important; position: relative !important; transition: color 0.25s !important;
+        }
+        .nav-menu > li > a::after {
+            content: '' !important; position: absolute !important;
+            bottom: -2px !important; left: 15px !important; right: 15px !important;
+            height: 2px !important; background: #e31837 !important;
+            transform: scaleX(0) !important; transform-origin: left !important;
+            transition: transform 0.28s ease !important;
+        }
+        .nav-menu > li:hover > a { color: #e31837 !important; }
+        .nav-menu > li:hover > a::after { transform: scaleX(1) !important; }
+        .header-menu-wrap li ul {
+            background: #04223e !important; border-top: 3px solid #e31837 !important;
+            border-radius: 0 0 8px 8px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18) !important; min-width: 190px !important;
+        }
+        .header-menu-wrap li ul li a { color: #b0c4de !important; font-size: 13px !important; font-weight: 400 !important; }
+        .header-menu-wrap li ul li a:hover { color: #fff !important; background: rgba(227,24,55,0.15) !important; padding-left: 22px !important; }
+        .mobile-menu-icon i { color: #04223e !important; font-size: 22px !important; }
+        .footer-section { border-top: 3px solid #1b5e20; }
+        .section-heading .hl { color: #1b5e20 !important; }
+        @keyframes ctaFlash {
+            0%   { background: #e31837; border-color: #e31837; box-shadow: 0 0 0 0 rgba(227,24,55,0.7); transform: scale(1); }
+            30%  { background: #e31837; border-color: #e31837; box-shadow: 0 0 14px 6px rgba(227,24,55,0.5); transform: scale(1.04); }
+            50%  { background: #1a237e; border-color: #1a237e; box-shadow: 0 0 14px 6px rgba(26,35,126,0.5); transform: scale(1); }
+            70%  { background: #1a237e; border-color: #1a237e; box-shadow: 0 0 14px 6px rgba(26,35,126,0.5); transform: scale(1.04); }
+            100% { background: #e31837; border-color: #e31837; box-shadow: 0 0 0 0 rgba(227,24,55,0.7); transform: scale(1); }
+        }
+        .book-cta-btn {
+            animation: ctaFlash 2.4s ease-in-out infinite !important;
+            color: #fff !important; font-weight: 700 !important;
+            letter-spacing: 0.5px !important; transition: none !important;
+        }
+        .book-cta-btn:hover {
+            animation-play-state: paused !important; background: #e31837 !important;
+            border-color: #e31837 !important; color: #fff !important;
+        }
+        /* ── Page hero overlay ── */
+        .page-header {
+            position: relative;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(4,34,62,0.52) 45%, rgba(4,34,62,0.18) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        /* ── CTA "Getting You There Safely" overlay ── */
+        .cta-section .cta-wrapper {
+            position: relative;
+        }
+        .cta-section .cta-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(4,34,62,0.55);
+            z-index: 0;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+        .cta-section .cta-wrapper > * {
+            position: relative;
+            z-index: 1;
+        }
+        /* ════════════════════════════════════
+           MOBILE NAVBAR — responsive fixes
+        ════════════════════════════════════ */
+        @media (max-width: 992px) {
+            .gogo-topnav-links { display: none !important; }
+            .gogo-topbar-inner { flex-wrap: nowrap; justify-content: space-between; }
+            .main-header-wapper { min-height: 64px !important; }
+            .site-logo { padding: 8px 16px 8px 0 !important; border-right: 1px solid #eee !important; margin-right: 0 !important; }
+            .site-logo img { width: 110px !important; }
+            .header-menu-wrap .nav-menu { display: none !important; }
+            .header-menu-wrap { min-height: 64px !important; padding: 0 !important; justify-content: flex-end !important; }
+            .menu-right-item .mobile-menu-icon {
+                display: flex !important; background-color: #f0f3f7 !important;
+                border-radius: 50% !important; width: 40px !important; height: 40px !important;
+                align-items: center !important; justify-content: center !important;
+                cursor: pointer !important; margin-left: 10px !important;
+            }
+            .mobile-menu-icon i { color: #04223e !important; font-size: 20px !important; }
+            .book-cta-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                white-space: nowrap !important;
+                padding: 10px 14px !important;
+                font-size: 11px !important;
+                margin-left: 0 !important;
+                margin-right: 8px !important;
+            }
+            .menu-right-item .book-cta-btn {
+                order: 1 !important;
+            }
+            .menu-right-item .mobile-menu-icon {
+                order: 2 !important;
+            }
+            .book-cta-btn i {
+                margin-right: 5px !important;
+                font-size: 12px !important;
+            }
+            .mobile-navigation-menu {
+                background: #ffffff !important; position: fixed !important;
+                top: 0 !important; left: -100% !important;
+                width: 300px !important; max-width: 85vw !important;
+                height: 100vh !important; padding: 80px 0 40px !important;
+                box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
+                overflow-y: auto !important; z-index: 9999 !important;
+                transition: left 0.3s ease !important;
+                display: block !important; visibility: hidden !important; opacity: 0 !important;
+            }
+            .open-mobile-menu.mobile-navigation-menu { left: 0 !important; visibility: visible !important; opacity: 1 !important; }
+            .mobile-navigation-menu .nav-menu,
+            .mobile-navigation-menu ul { display: block !important; flex-direction: unset !important; list-style: none !important; padding: 0 !important; margin: 0 !important; }
+            .mobile-navigation-menu ul li { display: block !important; position: relative !important; padding: 0 !important; margin: 0 !important; border-bottom: 1px solid #f0f3f7 !important; }
+            .mobile-navigation-menu ul li > a { display: block !important; color: #04223e !important; font-size: 15px !important; font-weight: 600 !important; padding: 14px 24px !important; text-decoration: none !important; }
+            .mobile-navigation-menu ul li > a:hover { color: #e31837 !important; background: #f8f9fa !important; }
+            .mobile-navigation-menu ul li > ul { display: none !important; }
+            .mobile-navigation-menu ul li.dropdown-open > ul { display: block !important; }
+            .mobile-navigation-menu li li { border-bottom: none !important; }
+            .mobile-navigation-menu li li > a { color: #666 !important; font-size: 14px !important; font-weight: 500 !important; padding: 11px 24px 11px 40px !important; background: #f8fafc !important; }
+            .mobile-navigation-menu li li > a:hover { color: #e31837 !important; background: #f0f3f7 !important; }
+            .mobile-navigation-menu ul li.dropdown_menu > a { border-left: 3px solid #e31837 !important; }
+            .mobile-navigation-menu .dropdown-plus { position: absolute !important; top: 0 !important; right: 0 !important; width: 50px !important; height: 48px !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+            #mobile-menu-close { background: none !important; border: none !important; color: #04223e !important; position: absolute !important; right: 14px !important; top: 14px !important; width: 44px !important; height: 44px !important; font-size: 22px !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 50% !important; cursor: pointer !important; z-index: 10 !important; }
+            #mobile-menu-close:hover { color: #e31837 !important; background: #f0f3f7 !important; }
+            .gogo-topbar-email { display: none !important; }
+            .gogo-social-bar { display: flex !important; }
+        }
+        @media (max-width: 480px) {
+            .site-logo img { width: 95px !important; }
+            .mobile-navigation-menu { width: 100% !important; max-width: 100vw !important; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="preloader-bg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <!-- <div class="site-preloader preloader-text">
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+            <span data-text="-">-</span>
+            <span data-text="G">G</span>
+            <span data-text="O">O</span>
+        </div> -->
+        <div class="site-preloader">
+            <video autoplay muted playsinline loop style="width:180px;height:auto;display:block;">
+                <source src="assets/img/gogo-photos/gogoloader.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <header class="main-header">
+
+        <!-- ── Top bar ── -->
+        <div class="gogo-topbar">
+            <div class="container">
+                <div class="gogo-topbar-inner">
+                    <div class="gogo-topbar-left">
+                        <a href="tel:0115685340"><i class="fa-regular fa-phone"></i>011 568 5340</a>
+                        <span class="gogo-topbar-email"><i class="fa-regular fa-envelope-dot" style="color:#e31837;font-size:11px"></i>info@gogoshuttles.co.za</span>
+                    </div>
+                    <div class="gogo-topbar-right">
+                        <div class="gogo-topnav-links">
+                            <!--<a href="faqs.html">Help</a>
+                            <span>|</span>-->
+                            <a href="contact.html">Support</a>
+                            <span>|</span>
+                            <!--<a href="faqs.html">FAQ</a>-->
+                        </div>
+                        <div class="gogo-social-bar">
+                             <a href="https://www.facebook.com/GoGoShuttles1"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/go_go_shuttles/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Main nav row ── -->
+        <div class="container">
+            <div class="main-header-wapper">
+                <div class="site-logo">
+                    <a href="index.html"><img src="assets/img/gogo-logo.png" alt="GO-GO Shuttles Logo" /></a>
+                </div>
+                <div class="main-header-info">
+                    <div class="top-header"></div>
+                    <div class="header-menu-wrap">
+                        <ul class="nav-menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li>
+                                <a href="company.html">Company</a>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <!--<li><a href="services-logistic.html">Staff Transport</a></li>-->
+                                    <li><a href="services-transportation.html">Mobility Solutions</a></li>
+                                    <!--<li><a href="service-details.html">Service Details</a></li>-->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="projects.html">Sectors</a>
+                            </li>
+                                                                                    <li><a href="gallery.html">Gallery</a></li>
+
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="menu-right-item">
+                            <div class="mobile-menu-icon">
+                                <i class="fa-regular fa-ellipsis-vertical"></i>
+                            </div>
+                            <a href="quote.html" target="_blank" class="default-btn book-cta-btn d-none d-lg-block d-md-block">
+                                <i class="fa-regular fa-bus"></i>Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="popup-search-box">
+        <div class="box-inner-wrap d-flex align-items-center">
+            <form id="form" action="#" method="get" role="search">
+                <input id="popup-search" type="text" name="s" placeholder="Type keywords here...">
+                <button id="popup-search-button" type="submit" name="submit">
+                    <i class="fa-sharp fa-light fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <div class="search-close"><i class="fa-regular fa-xmark"></i></div>
+        </div>
+    </div>
+
+    <div id="searchbox-overlay"></div>
+
+    <!-- ══════════════════════════════════
+         PAGE HEADER
+    ══════════════════════════════════ -->
+    <section class="page-header" style="background-image:url('assets/img/gogo-photos/servhero2.jpg'); background-size:cover; background-position:center center;">
+        <div class="container">
+            <div class="page-header-info">
+                <h4>Our Services</h4>
+                <h2>Safe, reliable &amp; <br>on-time <span>transport!</span></h2>
+                <!--<p>GO-GO Shuttles delivers premium passenger transport solutions <br>tailored to corporate, academic, and event mobility needs.</p>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         SERVICES GRID
+    ══════════════════════════════════ -->
+    <section class="service-section padding">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- 1. Staff Transportation -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="100ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/stafftransportation.jpg" alt="Staff Transportation">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-bus"></i>
+                            <h3><a href="service-details.html">Staff Transportation</a></h3>
+                            <p>Daily scheduled transport for company employees, fully tailored to shift times and pick-up routes across Gauteng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Park-and-Ride -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="300ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/park.jpeg" alt="Park-and-Ride Solutions">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-map-1"></i>
+                            <h3><a href="service-details.html">Social Events, Park-&-Ride Solutions</a></h3>
+                            <p>Shuttle services between park-and-ride hubs and business or event venues — seamless, efficient and stress-free.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Corporate Events -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="500ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/conferencetransport.jpeg" alt="Corporate Events Transport">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-employee"></i>
+                            <h3><a href="service-details.html">Corporate Events Transport</a></h3>
+                            <p>Bespoke logistics solutions for large corporate gatherings, conferences, and exhibitions — with a touch of royalness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. School & Academic -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="200ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/schooltransportation.jpg" alt="School and Academic Transport">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-bus-1"></i>
+                            <h3><a href="service-details.html">School &amp; Academic Transport</a></h3>
+                            <p>Safe, route-based shuttle services for learners and tertiary students, with fully vetted PDP-certified drivers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Private Group Charters -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="400ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/private.jpeg" alt="Private Group Charters">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-route-1"></i>
+                            <h3><a href="service-details.html">Private Group Charters</a></h3>
+                            <p>Custom transport solutions for social or corporate events — flexible scheduling, any group size, anywhere in Gauteng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Community & NGO Transport -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card wow fade-in-bottom" data-wow-delay="600ms">
+                        <div class="service-thumb">
+                            <img src="assets/img/gogo-photos/ngo.jpeg" alt="Community and NGO Transport">
+                        </div>
+                        <div class="service-content">
+                            <i class="logis logis-route"></i>
+                            <h3><a href="service-details.html">Community &amp; NGO Transport</a></h3>
+                            <p>Shuttle solutions for ECD centres and NGOs as part of our community upliftment and enterprise development commitment.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         CTA SECTION
+    ══════════════════════════════════ -->
+    <section class="cta-section padding-bottom">
+        <div class="container">
+            <div class="row cta-wrapper gx-0" style="background-image:url('assets/img/gogo-photos/seat2.jpg'); background-size:cover; background-position:center center;">
+                <div class="col-lg-6">
+                    <div class="section-heading white">
+                        <h3 class="sub-heading is-border border-anim">Getting You There Safely!<span class="sh-underline"><img class="sh-truck" src="assets/img/truck.svg" alt="shuttle"></span></h3>
+                        <h2 class="text-anim" data-effect="fade-in-right" data-split="char" data-delay="0.3" data-duration="1">Reliable Staff &amp; <br>Event Shuttle <span class="hl">Services!</span></h2>
+                        <a href="contact.html" class="default-btn wow fade-in-bottom" data-wow-delay="200ms">Book a Shuttle</a>
+                    </div>
+                </div>
+                <!-- <div class="cta-men wow fade-in-bottom" data-wow-delay="200ms"></div> -->
+            </div>
+            <div class="row promo-item-wrapper gx-0">
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-bus-1"></i>
+                        <div class="promo-content">
+                            <h3>Staff Transport</h3>
+                            <p>Daily scheduled employee transport tailored to shift times and routes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-map-1"></i>
+                        <div class="promo-content">
+                            <h3>Park-and-Ride</h3>
+                            <p>Hub-to-venue shuttle services for businesses and large events.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="promo-item">
+                        <i class="logis logis-employee"></i>
+                        <div class="promo-content">
+                            <h3>Corporate Events</h3>
+                            <p>Bespoke transport for conferences, exhibitions and private charters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         FOOTER
+    ══════════════════════════════════ -->
+    <footer class="footer-section">
+        <div class="map-pattern"></div>
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row gy-lg-0 gy-4">
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget">
+            <a href="index.html" class="footer-logo"><img src="assets/img/gogo-logo.png" alt="GO-GO Shuttles"></a>
+            <p>For over a decade, GO-GO Shuttles has been connecting people, businesses, educational institutions and communities through safe, reliable and professional transport solutions.</p>
+            <ul class="social-share">
+                <a href="https://www.facebook.com/GoGoShuttles1"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/go_go_shuttles/"><i class="fa-brands fa-instagram"></i></a>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget widget-links">
+            <div class="widget-title"><h3>Company</h3></div>
+            <ul class="footer-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services-transportation.html">Our Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="footer-widget">
+            <div class="widget-title"><h3>Get In Touch</h3></div>
+            <ul class="footer-contact-info">
+                <li>
+                    <p><span>Address:</span>100 Western Service Rd,<br>Woodmead, Sandton, 2148</p>
+                </li>
+                <li>
+                    <p><span>Phone:</span>011 568 5340 / 064 540 8024</p>
+                </li>
+                <li>
+                    <p><span>Email:</span>info@gogoshuttles.co.za</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+    </div><!-- end footer-wrapper -->
+    <div class="copyright-area">
+        © <span id="currentYear"></span> GO-GO Shuttles (Pty) Ltd, All Rights Reserved. | 100% Black-Owned | B-BBEE Level 1 | <a href="https://www.gogoshuttles.co.za" target="_blank">www.gogoshuttles.co.za</a>
+    </div>
+    </footer>
+
+    <div id="scrollup">
+        <button id="scroll-top" class="scroll-to-top"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <script src="assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/popper.min.js"></script>
+    <script src="assets/lib/gsap/gsap.min.js"></script>
+    <script src="assets/lib/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/lib/gsap/split-type.min.js"></script>
+    <script src="assets/js/vendor/lenis.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/venobox.min.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/mailchimp.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

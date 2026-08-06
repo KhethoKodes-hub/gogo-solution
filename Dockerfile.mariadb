@@ -1,0 +1,4 @@
+FROM mariadb:11
+
+# Render will mount a persistent disk at /var/lib/mysql.
+VOLUME ["/var/lib/mysql"]

@@ -1,0 +1,24 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /workspace
+
+COPY package.json package-lock.json ./
+COPY nx.json tsconfig.base.json jest.preset.js jest.config.ts eslint.config.mjs ./
+COPY apps/frontend ./apps/frontend
+
+RUN npm ci && npx nx build frontend --skipNxCache
+
+FROM node:20-alpine AS runtime
+
+WORKDIR /app
+ENV NODE_ENV=production
+ENV NITRO_HOST=0.0.0.0
+ENV NITRO_PORT=4200
+
+COPY --from=builder /workspace/apps/frontend/.output ./apps/frontend/.output
+
+USER node
+
+EXPOSE 4200
+
+CMD ["node", "apps/frontend/.output/server/index.mjs"]
