@@ -923,9 +923,58 @@
     <script src="assets/js/vendor/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
+    <!-- Google Maps API with Places library -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYMoeS4teBIa19nHoEcRM1NXVU4IjAUKk&libraries=places" async defer></script>
+
     <script>
     /* ── Copyright year ── */
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    /* ── Google Places Autocomplete ── */
+    function initAutocomplete() {
+        // Collection address autocomplete
+        var collectionInput = document.getElementById('q-collection');
+        var collectionAutocomplete = new google.maps.places.Autocomplete(collectionInput, {
+            componentRestrictions: { country: 'za' }, // Restrict to South Africa
+            fields: ['formatted_address', 'geometry', 'name']
+        });
+
+        // Destination address autocomplete
+        var destinationInput = document.getElementById('q-destination');
+        var destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput, {
+            componentRestrictions: { country: 'za' },
+            fields: ['formatted_address', 'geometry', 'name']
+        });
+
+        // Update input value when place is selected
+        collectionAutocomplete.addListener('place_changed', function() {
+            var place = collectionAutocomplete.getPlace();
+            if (place.formatted_address) {
+                collectionInput.value = place.formatted_address;
+            }
+        });
+
+        destinationAutocomplete.addListener('place_changed', function() {
+            var place = destinationAutocomplete.getPlace();
+            if (place.formatted_address) {
+                destinationInput.value = place.formatted_address;
+            }
+        });
+    }
+
+    // Initialize autocomplete when Google Maps API is loaded
+    window.addEventListener('load', function() {
+        if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+            initAutocomplete();
+        } else {
+            // Retry after a short delay if API not yet loaded
+            setTimeout(function() {
+                if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+                    initAutocomplete();
+                }
+            }, 500);
+        }
+    });
 
     /* ── Trip Type Toggle ── */
     function setTripType(type) {
