@@ -125,6 +125,7 @@ const formListeners: Array<{ form: HTMLFormElement; handler: EventListener }> = 
 const validationListeners: Array<{ field: FormFieldElement; type: string; handler: EventListener }> = [];
 const scrollListeners: Array<{ target: Window | HTMLElement; type: string; handler: EventListenerOrEventListenerObject }> = [];
 const clickListeners: Array<{ target: HTMLElement; handler: EventListenerOrEventListenerObject }> = [];
+const mobileMenuListeners: Array<{ target: HTMLElement; handler: EventListenerOrEventListenerObject }> = [];
 let preloaderCleanupTimer: ReturnType<typeof setTimeout> | null = null;
 
 function clearInjectedScripts() {
@@ -211,6 +212,121 @@ function attachBackToTopHandler() {
   clickListeners.push({ target: scrollTopButton, handler: onClick });
 
   syncState();
+}
+
+function clearMobileMenuListeners() {
+  while (mobileMenuListeners.length > 0) {
+    const entry = mobileMenuListeners.pop();
+    if (!entry) {
+      continue;
+    }
+    entry.target.removeEventListener('click', entry.handler);
+  }
+}
+
+function attachMobileMenuHandler() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  clearMobileMenuListeners();
+
+  // Check if mobile menu already exists to prevent duplicates
+  let mobileMenu = document.querySelector('.mobile-navigation-menu') as HTMLElement | null;
+  
+  // If it doesn't exist, create it
+  if (!mobileMenu) {
+    const header = document.querySelector('header.main-header');
+    if (!header) {
+      return;
+    }
+
+    // Create mobile menu container
+    mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-navigation-menu';
+    
+    // Add close button
+    const closeButton = document.createElement('button');
+    closeButton.id = 'mobile-menu-close';
+    closeButton.innerHTML = '<i class="fa-regular fa-xmark"></i>';
+    mobileMenu.appendChild(closeButton);
+
+    // Clone the nav menu
+    const navMenu = document.querySelector('header.main-header .header-menu-wrap .nav-menu');
+    if (navMenu) {
+      const clonedMenu = navMenu.cloneNode(true) as HTMLElement;
+      mobileMenu.appendChild(clonedMenu);
+    }
+
+    // Insert after header
+    header.parentNode?.insertBefore(mobileMenu, header.nextSibling);
+
+    // Hide all sub-menus initially
+    const subMenus = mobileMenu.querySelectorAll('ul li > ul');
+    subMenus.forEach((subMenu) => {
+      (subMenu as HTMLElement).style.display = 'none';
+    });
+
+    // Add dropdown plus icons
+    const dropdownItems = mobileMenu.querySelectorAll('ul li:has(ul)');
+    dropdownItems.forEach((item) => {
+      const dropdownPlus = document.createElement('span');
+      dropdownPlus.className = 'dropdown-plus';
+      item.appendChild(dropdownPlus);
+      item.classList.add('dropdown_menu');
+
+      // Add span to dropdown menu links
+      const link = item.querySelector(':scope > a');
+      if (link) {
+        const span = document.createElement('span');
+        link.appendChild(span);
+      }
+    });
+
+    // Add dropdown toggle handlers
+    const dropdownToggles = mobileMenu.querySelectorAll('.dropdown-plus');
+    dropdownToggles.forEach((toggle) => {
+      const handler: EventListener = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const parentLi = (toggle as HTMLElement).closest('li');
+        if (parentLi) {
+          const subMenu = parentLi.querySelector(':scope > ul') as HTMLElement | null;
+          if (subMenu) {
+            const isOpen = subMenu.style.display === 'block';
+            subMenu.style.display = isOpen ? 'none' : 'block';
+            parentLi.classList.toggle('dropdown-open', !isOpen);
+          }
+        }
+      };
+      toggle.addEventListener('click', handler);
+      mobileMenuListeners.push({ target: toggle as HTMLElement, handler });
+    });
+  }
+
+  // Get toggle elements
+  const menuIcon = document.querySelector('.mobile-menu-icon') as HTMLElement | null;
+  const closeButton = document.getElementById('mobile-menu-close') as HTMLElement | null;
+
+  if (!menuIcon || !closeButton || !mobileMenu) {
+    return;
+  }
+
+  // Toggle menu on icon click
+  const toggleHandler: EventListener = (event) => {
+    event.preventDefault();
+    menuIcon.classList.toggle('menu-open');
+    mobileMenu!.classList.toggle('open-mobile-menu');
+  };
+
+  menuIcon.addEventListener('click', toggleHandler);
+  closeButton.addEventListener('click', toggleHandler);
+
+  mobileMenuListeners.push(
+    { target: menuIcon, handler: toggleHandler },
+    { target: closeButton, handler: toggleHandler }
+  );
 }
 
 function getApiUrl(path: string) {
@@ -1038,6 +1154,7 @@ function runPostRenderBoot() {
     dismissStuckPreloader();
     ensureManagedSliders();
     attachBackToTopHandler();
+    attachMobileMenuHandler();
     attachManagedFormHandlers();
   }, 0);
 
@@ -1073,6 +1190,7 @@ onBeforeUnmount(() => {
   }
   clearPreloaderCleanupTimer();
   clearBackToTopListeners();
+  clearMobileMenuListeners();
   clearFormListeners();
   clearInjectedScripts();
 });
